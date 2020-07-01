@@ -1,11 +1,11 @@
 resource "aws_default_security_group" "default" {
 
-vpc_id =  "var.aws_vpc.mainvpc.id"
-
-    tags = {
+vpc_id =  "aws_vpc.mainvpc.id"
+    }
+    /*tags = {
         Name = "default"
     }
-}
+}*/
 
   /* ingress {
     protocol  = -1
