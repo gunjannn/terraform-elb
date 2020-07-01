@@ -9,7 +9,7 @@ resource "aws_instance" "linux_vm2" {
     source_dest_check = false
     vpc_security_group_ids      = "aws_security_group.sec-grp.id"
     associate_public_ip_address = true
-    user_data = "file("user-data2.sh")"
+    user_data = "${file("user-data2.sh")}"
     root_block_device {
         volume_type           = "gp2"
         volume_size           = 8
