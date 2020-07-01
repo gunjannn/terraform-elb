@@ -7,8 +7,7 @@ resource "aws_instance" "linux_vm" {
     key_name                    = "var.aws_key"
     subnet_id                   = "var.aws_subnet"
     source_dest_check = false
-    aws_security_group      = "var.aws_security_group.test.id"
-     
+    vpc_security_group_ids      = "aws_security_group.sec-grp.id"
     associate_public_ip_address = true
     user_data = "user-data.sh"
     root_block_device {
