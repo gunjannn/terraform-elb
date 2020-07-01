@@ -1,13 +1,13 @@
-/*resource "aws_instance" "linux_vm2" {
+resource "aws_instance" "linux_vm2" {
     ami                         = "var.aws_ami"
     availability_zone           = "us-east-1b"
     ebs_optimized               = false
     instance_type               = "t2.micro"
     monitoring                  = false
     key_name                    = "var.aws_key"
-    subnet_id                   = "var.aws_subnet2"
+    subnet_id                   = "var.aws_subnet"
     source_dest_check = false
-    aws_security_group      = "var.aws_default_security_group" "default"
+    vpc_security_group_ids      = "aws_security_group.sec-grp.id"
     associate_public_ip_address = true
     user_data = "user-data2.sh"
     root_block_device {
@@ -18,5 +18,5 @@
     tags = {
         Name = "linux_vm2"
     }
-}*/
+}
 
