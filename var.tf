@@ -23,7 +23,7 @@ variable "aws_key" {
      default = "ami-09d95fab7fff3776c"
 }
 
- variable "aws_security_group" {
+ /*variable "aws_security_group" {
      description = "sec-grp"
      default = "sg-0fe2c17e7fd3a4f8a"
-}
+}*/
