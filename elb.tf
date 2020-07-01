@@ -16,7 +16,7 @@ resource "aws_lb_target_group" "target-grp" {
   name     = "target-grp"
   port     = 80
   protocol = "HTTP"
-  vpc_id   = "var.aws_vpc"
+  vpc_id   = "var.aws_vpc.mainvpc.id"
   health_check {
                 path = "/healthcheck"
                 port = "80"
