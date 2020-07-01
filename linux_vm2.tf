@@ -7,9 +7,9 @@ resource "aws_instance" "linux_vm2" {
     key_name                    = "var.aws_key"
     subnet_id                   = "var.aws_subnet2"
     source_dest_check = false
-    vpc_security_group_ids      = "var.aws_security_group.sec-grp.id"
+    aws_security_group      = "var.aws_default_security_group" "default"
     associate_public_ip_address = true
-    user_data = "${file("user-data2.sh")}"
+    user_data = "user-data2.sh"
     root_block_device {
         volume_type           = "gp2"
         volume_size           = 8
