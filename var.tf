@@ -1,7 +1,7 @@
-variable "aws_vpc" {
+/*variable "aws_vpc" {
     description = "VPC"
     default = "vpc-d4292cae"
-}
+}*/
 
 variable "aws_subnet" {
     description = "aws subnet"
@@ -24,7 +24,7 @@ variable "aws_key" {
 }
 
 
- variable "sec-grp" {
-     description = "sec grp"
+/* variable "default" {
+     description = "default"
      default = "sg-540a0f78"
-}
+}*/
