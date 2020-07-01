@@ -1,4 +1,4 @@
-resource "aws_instance" "linux_vm2" {
+/*resource "aws_instance" "linux_vm2" {
     ami                         = "var.aws_ami"
     availability_zone           = "us-east-1b"
     ebs_optimized               = false
@@ -18,5 +18,5 @@ resource "aws_instance" "linux_vm2" {
     tags = {
         Name = "linux_vm2"
     }
-}
+}*/
 
