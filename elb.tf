@@ -2,7 +2,7 @@ resource "aws_lb" "http_elb" {
   name               = "http-elb"
   internal           = false
   load_balancer_type = "application"
-  security_groups    = "var.sec-grp.*.id"
+  security_groups    = "var.sec-grp.*.id"      
   subnets            = [
     "var.aws_subnet",
     "var.aws_subnet2",
