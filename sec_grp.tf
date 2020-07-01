@@ -1,8 +1,6 @@
 resource "aws_default_security_group" "default" {
 
-    name = "default"
-
-    vpc_id =  "var.aws_vpc.mainvpc.id"
+vpc_id =  "var.aws_vpc.mainvpc.id"
 
     tags = {
         Name = "default"
