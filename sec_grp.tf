@@ -1,13 +1,25 @@
-resource "aws_default_security_group" "default" {
+resource "aws_security_group" "test" {
 
-vpc_id =  "aws_vpc.mainvpc.id"
+name = "test"
+default = "sg-0fe2c17e7fd3a4f8a" 
+vpc_id =  "var.aws_vpc.VPC.id"
     }
     /*tags = {
         Name = "default"
     }
 }*/
 
-  /* ingress {
+  
+resource "aws_security_group_rule" "test" {
+  type              = "ingress"
+  from_port         = 0
+  to_port           = 65535
+  security_group_id = "sg-0fe2c17e7fd3a4f8a"
+}
+
+
+
+/* ingress {
     protocol  = -1
     self      = true
     from_port = 0
