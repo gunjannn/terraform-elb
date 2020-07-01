@@ -35,11 +35,11 @@ resource "aws_lb_target_group_attachment" "target1" {
   port             = 80
   }
   
-resource "aws_lb_target_group_attachment" "target2" {
+/*resource "aws_lb_target_group_attachment" "target2" {
   target_group_arn = "aws_lb_target_group.target-grp.arn"
   target_id        = "aws_instance.linux_vm2.id"
   port             = 80
-  }
+  }*/
 
 #resource "aws_lb_target_group_attachment" "target2" {
 #  target_group_arn = "${aws_lb_target_group.target-grp.arn}"
