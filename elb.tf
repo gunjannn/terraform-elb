@@ -13,7 +13,7 @@ resource "aws_lb_target_group" "target-grp" {
   name     = "target-grp"
   port     = 80
   protocol = "HTTP"
-  vpc_id   = "${var.aws_vpc}"
+  vpc_id   = ["${var.aws_vpc}"]
   health_check {
                 path = "/healthcheck"
                 port = "80"
@@ -27,14 +27,14 @@ resource "aws_lb_target_group" "target-grp" {
 }
 
 resource "aws_lb_target_group_attachment" "target1" {
-  target_group_arn = "${aws_lb_target_group.target-grp.arn}"
-  target_id        = "${aws_instance.linux_vm.id}"
+  target_group_arn = ["${aws_lb_target_group.target-grp.arn}"]
+  target_id        = ["${aws_instance.linux_vm.id}"]
   port             = 80
   }
   
 resource "aws_lb_target_group_attachment" "target2" {
-  target_group_arn = "${aws_lb_target_group.target-grp.arn}"
-  target_id        = "${aws_instance.linux_vm2.id}"
+  target_group_arn = ["${aws_lb_target_group.target-grp.arn}"]
+  target_id        = ["${aws_instance.linux_vm2.id}"]
   port             = 80
   }
 
