@@ -1,35 +1,30 @@
-resource "aws_security_group" "test" {
+resource "aws_security_group" "sec-grp" {
 
-name = "test"
-default = "sg-0fe2c17e7fd3a4f8a" 
-vpc_id =  "var.aws_vpc.VPC.id"
-    }
-    /*tags = {
-        Name = "default"
-    }
-}*/
+    name = "sec-grp"
 
-  
-resource "aws_security_group_rule" "test" {
-  type              = "ingress"
-  from_port         = 0
-  to_port           = 65535
-  security_group_id = "sg-0fe2c17e7fd3a4f8a"
+    vpc_id =  "var.aws_vpc"
+
+    tags = {
+        Name = "sec-grp"
+    }
 }
 
+resource "aws_security_group_rule" "allow-ingress" {
 
+        type            = "ingress"
+        from_port       = "0"
+        to_port         = "0"
+        protocol        = "-1"
+        cidr_blocks = ["0.0.0.0/0"]
+        security_group_id = "aws_security_group.sec-grp.id"
+}
 
-/* ingress {
-    protocol  = -1
-    self      = true
-    from_port = 0
-    to_port   = 0
-  }
+resource "aws_security_group_rule" "allow-egress" {
 
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-}*/
+        type            = "egress"
+        from_port       = "0"
+        to_port         = "0"
+        protocol        = "-1"
+        cidr_blocks = ["0.0.0.0/0"]
+        security_group_id = "aws_security_group.sec-grp.id"
+}
