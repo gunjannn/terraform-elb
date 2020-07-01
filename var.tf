@@ -24,6 +24,6 @@ variable "aws_key" {
 }
 
  variable "aws_security_group" {
-     description = "test"
+     description = "sec-grp"
      default = "sg-0fe2c17e7fd3a4f8a"
 }
