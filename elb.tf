@@ -2,7 +2,7 @@ resource "aws_lb" "http_elb" {
   name               = "http-elb"
   internal           = false
   load_balancer_type = "application"
-  aws_security_group    = "var.aws_security_group.default_security_group.id"      
+  aws_security_group    = "aws_security_group.default_security_group.id"      
   subnets            = [
     "var.aws_subnet",
     "var.aws_subnet2",
@@ -16,7 +16,7 @@ resource "aws_lb_target_group" "target-grp" {
   name     = "target-grp"
   port     = 80
   protocol = "HTTP"
-  vpc_id   = "var.aws_vpc.mainvpc.id"
+  vpc_id   = "aws_vpc.mainvpc.id"
   health_check {
                 path = "/healthcheck"
                 port = "80"
