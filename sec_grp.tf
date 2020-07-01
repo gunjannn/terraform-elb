@@ -9,7 +9,7 @@ resource "aws_default_security_group" "default" {
     }
 }
 
-   ingress {
+  /* ingress {
     protocol  = -1
     self      = true
     from_port = 0
@@ -22,4 +22,4 @@ resource "aws_default_security_group" "default" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
-}
+}*/
