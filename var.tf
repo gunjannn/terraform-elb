@@ -1,17 +1,17 @@
-/*variable "aws_vpc" {
+variable "aws_vpc" {
     description = "VPC"
-    default = "vpc-d4292cae"
-}*/
+    default = "vpc-062ed47bcf762bf31"
+}
 
 variable "aws_subnet" {
     description = "aws subnet"
-    default = "subnet-026e523c"
+    default = "subnet-0fd45782f556cd4f5"
 }
 
-variable "aws_subnet2" {
+/*variable "aws_subnet2" {
     description = "aws subnet2"
     default = "subnet-81b9a0fc"
-}
+}*/
 
 variable "aws_key" {
     description = "aws key"
@@ -23,8 +23,7 @@ variable "aws_key" {
      default = "ami-09d95fab7fff3776c"
 }
 
-
-/* variable "default" {
-     description = "default"
-     default = "sg-540a0f78"
-}*/
+ variable "aws_security_group" {
+     description = "test"
+     default = "sg-0fe2c17e7fd3a4f8a"
+}
